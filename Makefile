@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := docker-run
+.DEFAULT_GOAL := test
 APP_NAME=hellogrpc
 
 .PHONY: docker-build
@@ -12,3 +12,7 @@ docker-run:
 .PHONY: hellogrpc
 hellogrpc:
 	go install github.com/thepatrik/hellogrpc
+
+.PHONY: test
+test:
+	go test ./...
