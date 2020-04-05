@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package mirror;
+
+message MirrorTextRequest {
+  string text = 1;
+}
+
+message MirrorTextResponse {
+  string text = 1;
+}
+
+service Mirror {
+  // Mirrors a string
+  rpc MirrorText(MirrorTextRequest) returns (MirrorTextResponse);
+}
